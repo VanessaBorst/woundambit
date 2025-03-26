@@ -1,0 +1,127 @@
+k_fold:
+  k: 5
+  random_seed: 42
+  include_test_split: True
+  ensemble_eval: "on_best_checkpoints"
+
+architecture:
+  arch_type: "MISSFormer"
+  model_name: "MISSFormer-CFU-512-k-Fold"
+  in_size: 512
+  encoder_pretrained: True
+  operate_on_224: True
+
+settings:
+  max_epochs: 200
+  batch_size: 8
+  random_seed: 42
+  full_determinism: True
+  mixed_precision: True
+  torch_compile: False
+  num_workers: 4
+  pin_memory: True
+  checkpoints:
+    save_mode: 'best_and_last'
+    metric: "iou"
+    min_epoch: 0
+  save_sample_segmentations: True
+  eval_object_sizes: True
+  transforms_backend: "torchvision"
+
+optimizer:
+  type: "AdamW"
+  lr: 0.0001
+
+loss:
+  type: "BCEL"
+
+scheduler:
+  type: "REX"
+  T_max: 200
+
+early_stop:
+  metric: "iou"
+  tolerance: 20
+  min_delta: 0.001
+
+metrics:
+  tracked:
+    - "dice"
+    - "iou"
+    - "precision"
+    - "recall"
+    - "f1_score"
+  averaging_method: "micro"
+  ignore_background_class: True
+
+dataset:
+  type: "CFU"
+  aux_test_datasets:
+    - "UkwTest"
+
+transforms:
+  train:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - gaussian_blur:
+        kernel_size: 25
+        sigma: (0.001, 2.0)
+    - random_affine:
+        degrees: (-180, 180)
+        translate: (0.25, 0.25)
+        scale: (0.75, 1.25)
+        shear: 17.5
+        fill: 0
+        mask_fill: 0
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False
+    - random_photometric_distort:
+        brightness: (0.875, 1.125)
+        contrast: (0.5, 1.5)
+        saturation: (0.5, 1.5)
+        hue: (-0.05, 0.05)
+        p: 0.5
+    - random_horizontal_flip:
+        p: 0.5
+    - random_vertical_flip:
+        p: 0.5
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+        apply_to_mask: False
+
+  val:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+        apply_to_mask: False
+
+  test:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+        apply_to_mask: False
+

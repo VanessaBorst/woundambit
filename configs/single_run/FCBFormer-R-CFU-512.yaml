@@ -1,0 +1,100 @@
+architecture:
+  arch_type: "FCBFormer"
+  model_name: "FCBFormer-R-CFU-512"
+  in_size: 512
+settings:
+  max_epochs: 200
+  batch_size: 4
+  random_seed: 42
+  full_determinism: True
+  mixed_precision: True
+  torch_compile: False
+  num_workers: 4
+  pin_memory: True
+  checkpoints:
+    save_mode: 'best_and_last'
+    metric: "iou"
+    min_epoch: 0
+  save_sample_segmentations: True
+  eval_object_sizes: True
+  transforms_backend: "torchvision"
+optimizer:
+  type: "AdamW"
+  lr: 0.0001
+scheduler:
+  type: "reduce_lr_on_plateau"
+  metric: "dice"
+  mode: "max"
+  min_lr: 0.000001
+  factor: 0.5
+  verbose: True
+early_stop: False
+metrics:
+  tracked:
+    - "dice"
+    - "iou"
+    - "precision"
+    - "recall"
+  averaging_method: "micro"
+  ignore_background_class: True
+dataset:
+  type: "CFU"
+transforms:
+  train:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - gaussian_blur:
+        kernel_size: 25
+        sigma: (0.001, 2.0)
+    - color_jitter:
+        brightness: 0.4
+        contrast: 0.5
+        saturation: 0.25
+        hue: 0.01
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+    - random_horizontal_flip:
+        p: 0.5
+    - random_vertical_flip:
+        p: 0.5
+    - random_affine:
+        degrees: (-180, 180)
+        translate: (0.125, 0.125)
+        scale: (0.5, 1.5)
+        shear: 22.5
+        fill: -1.0
+        mask_fill: 0
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False
+  val:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False
+  test:
+    - to_tensor: True
+    - pad_and_resize:
+        size: 512
+    - normalize:
+        mean: [ 0.5, 0.5, 0.5 ]
+        std: [ 0.5, 0.5, 0.5 ]
+    - threshold:
+        threshold: 127
+        pixel_min: 0
+        pixel_max: 255
+        apply_to_mask: True
+        apply_to_image: False

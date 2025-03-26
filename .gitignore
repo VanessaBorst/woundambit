@@ -1,0 +1,15 @@
+/data/*
+/out/*
+
+bin/
+.idea
+*.iws
+*.iml
+*.ipr
+.history/*
+__pycache__/
+
+**/*.egg-info
+/src/main/medseg/tools/deployment/image_mask_data/*
+/src/main/medseg/tools/deployment/out/*
+
