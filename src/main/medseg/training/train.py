@@ -14,7 +14,6 @@ from medseg.hyperopt.grid_search import GridSearchOptimizer
 from medseg.training.k_fold import KFoldCrossValidator
 from medseg.training.trainer import Trainer
 from medseg.util.date_time import get_current_date_time_str
-from medseg.util.mail_sender import send_mail_on_completion
 
 @click.group()
 def train():
@@ -24,7 +23,6 @@ def train():
 @train.command(name='from_config')
 @click.option("--path", type=click.Path(exists=True, file_okay=True), required=True)
 @click.option("--simulate", type=bool, is_flag=True, default=False, required=False)
-@send_mail_on_completion("Training finished")
 def train_from_config(path: str, simulate: bool = False):
     print(f"Using config file under: {path}")
     print(f"CUDA_VISIBLE_DEVICES: {os.environ['CUDA_VISIBLE_DEVICES']}")
@@ -55,7 +53,6 @@ def train_from_config(path: str, simulate: bool = False):
 @train.command(name='from_checkpoint')
 @click.option("--path", type=click.Path(exists=True, dir_okay=True), required=True)
 @click.option("--add_epochs", type=int, default=0, required=False)
-@send_mail_on_completion("Training finished")
 def train_from_checkpoint(path: str, add_epochs: int = 0):
     print(f"Resuming checkpoint from: {path}")
     checkpoint = torch.load(path)
@@ -74,7 +71,6 @@ def train_from_checkpoint(path: str, add_epochs: int = 0):
 @click.option("--path", type=click.Path(exists=True, dir_okay=False), required=True)
 @click.option("--grid_search_active", type=bool, is_flag=True, default=False, required=False)
 @click.option("--simulate", type=bool, is_flag=True, default=False, required=False)
-@send_mail_on_completion("Training finished")
 def train_from_hyperopt_state(path: str, grid_search_active: bool = False, simulate: bool = False):
     print(f"Trying to resume hyperparameter optimization run from: {path}")
     if grid_search_active:
@@ -95,7 +91,6 @@ def train_from_hyperopt_state(path: str, grid_search_active: bool = False, simul
 
 @train.command(name='from_kfold_state')
 @click.option("--path", type=click.Path(exists=True, dir_okay=False), required=True)
-@send_mail_on_completion("Training finished")
 def train_from_kfold_state(path: str, simulate: bool = False):
     print(f"Trying to resume k-fold cross-validation run from: {path}")
     state = pickle.load(open(path, 'rb'))
