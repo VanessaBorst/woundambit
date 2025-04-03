@@ -32,9 +32,12 @@ the purpose of evaluating the size retrieval performance, can be made available.
 These can be found in the directories labelled `./data/datasets/ood` and `./data/datasets/size_retrieval`, respectively.
 
 
-## Pretrained Weights
+## Pretrained ImageNet Weights and Trained Wound Segmentation Models
 
-For information regarding the required pretrained model weights, please refer to [this](docs/PretrainedWeights.md)
+For information regarding the required pretrained ImageNet model weights, please refer to [this](docs/PretrainedWeights.md).
+We provide the 5-fold cross-validation trained models that we used for the publication results on Zenodo under 
+restricted access for double-blind review. Reviewers can access the model files via the following anonymous link: 
+[Anonymous Zenodo Link](https://zenodo.org/records/15123641?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjhiNTNlYTRhLTkyOWYtNDRhOC05OThlLTIxMGNiMzJkMTMzMiIsImRhdGEiOnt9LCJyYW5kb20iOiI3Njc1YjJiYzY5YTMzYmFmODRmYzhjYTViMTg0ZDI5MyJ9.Z0fZEKJUmA0QplsKMvaYOg6GhNGxOm_rfKT-H7GYDR4e6Arqd2d15FFuOunrqt79IPklYScBg26nUSqojpJA7A). The model weights will be made publicly available with a DOI upon publication.
 
 ## Detailed Model Configs
 The configs that were used for creating the publication results can be found in `./configs` and
