@@ -1,0 +1,630 @@
+{
+    "name": "physician2",
+    "last_access_time": "2025-03-05 16:23:21",
+    "image_feedback": {
+        "Image_05": {
+            "height": 1.0,
+            "width": 2.0,
+            "fibrin": 50.0,
+            "necrosis": 1.0,
+            "epithelialization": 50.0,
+            "granulation": 60.0
+        },
+        "Image_09": {
+            "height": 9.0,
+            "width": 4.0,
+            "fibrin": 5.0,
+            "necrosis": 5.0,
+            "epithelialization": 50.0,
+            "granulation": 50.0
+        },
+        "Image_15": {
+            "height": 2.5,
+            "width": 1.0,
+            "fibrin": 90.0,
+            "necrosis": 0.0,
+            "epithelialization": 20.0,
+            "granulation": 30.0
+        },
+        "Image_13": {
+            "height": 8.0,
+            "width": 4.0,
+            "fibrin": 60.0,
+            "necrosis": 3.0,
+            "epithelialization": 20.0,
+            "granulation": 85.0
+        },
+        "Image_18": {
+            "height": 2.8,
+            "width": 1.5,
+            "fibrin": 0.0,
+            "necrosis": 5.0,
+            "epithelialization": 80.0,
+            "granulation": 90.0
+        },
+        "Image_04": {
+            "height": 4.5,
+            "width": 2.5,
+            "fibrin": 0.0,
+            "necrosis": 5.0,
+            "epithelialization": 85.0,
+            "granulation": 15.0
+        },
+        "Image_20": {
+            "height": 8.0,
+            "width": 3.5,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 0.0,
+            "granulation": 100.0
+        },
+        "Image_10": {
+            "height": 14.0,
+            "width": 5.0,
+            "fibrin": 10.0,
+            "necrosis": 5.0,
+            "epithelialization": 70.0,
+            "granulation": 90.0
+        },
+        "Image_07": {
+            "height": 1.0,
+            "width": 0.8,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 100.0,
+            "granulation": 100.0
+        },
+        "Image_03": {
+            "height": 2.0,
+            "width": 0.7,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 0.0,
+            "granulation": 60.0
+        },
+        "Image_02": {
+            "height": 14.0,
+            "width": 12.0,
+            "fibrin": 35.0,
+            "necrosis": 10.0,
+            "epithelialization": 75.0,
+            "granulation": 85.0
+        },
+        "Image_19": {
+            "height": 13.0,
+            "width": 5.0,
+            "fibrin": 0.0,
+            "necrosis": 5.0,
+            "epithelialization": 0.0,
+            "granulation": 5.0
+        },
+        "Image_01": {
+            "height": 0.8,
+            "width": 0.9,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 5.0,
+            "granulation": 80.0
+        },
+        "Image_08": {
+            "height": 1.2,
+            "width": 3.8,
+            "fibrin": 75.0,
+            "necrosis": 0.0,
+            "epithelialization": 45.0,
+            "granulation": 45.0
+        },
+        "Image_12": {
+            "height": 15.0,
+            "width": 7.0,
+            "fibrin": 75.0,
+            "necrosis": 20.0,
+            "epithelialization": 70.0,
+            "granulation": 30.0
+        },
+        "Image_06": {
+            "height": 6.0,
+            "width": 5.0,
+            "fibrin": 5.0,
+            "necrosis": 10.0,
+            "epithelialization": 10.0,
+            "granulation": 85.0
+        },
+        "Image_11": {
+            "height": 3.8,
+            "width": 3.0,
+            "fibrin": 60.0,
+            "necrosis": 5.0,
+            "epithelialization": 10.0,
+            "granulation": 80.0
+        },
+        "Image_16": {
+            "height": 0.4,
+            "width": 0.5,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 10.0,
+            "granulation": 90.0
+        },
+        "Image_14": {
+            "height": 2.2,
+            "width": 2.0,
+            "fibrin": 0.0,
+            "necrosis": 0.0,
+            "epithelialization": 0.0,
+            "granulation": 100.0
+        },
+        "Image_17": {
+            "height": 0.5,
+            "width": 0.5,
+            "fibrin": 0.0,
+            "necrosis": 90.0,
+            "epithelialization": 50.0,
+            "granulation": 50.0
+        }
+    },
+    "mask_feedback": {
+        "Image_17": {
+            "Ensemble": {
+                "judgment": "Bad"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "TransNeXt": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Bad"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            },
+            "SegFormer": {
+                "judgment": "Bad"
+            }
+        },
+        "Image_01": {
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            }
+        },
+        "Image_16": {
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            }
+        },
+        "Image_14": {
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            }
+        },
+        "Image_09": {
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            },
+            "Ensemble": {
+                "judgment": "Bad"
+            },
+            "SegFormer": {
+                "judgment": "Bad"
+            },
+            "TransNeXt": {
+                "judgment": "Bad"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Bad"
+            }
+        },
+        "Image_19": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            }
+        },
+        "Image_11": {
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            }
+        },
+        "Image_18": {
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            }
+        },
+        "Image_10": {
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            }
+        },
+        "Image_08": {
+            "SegFormer": {
+                "judgment": "Bad"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Bad"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            },
+            "Ensemble": {
+                "judgment": "Bad"
+            }
+        },
+        "Image_05": {
+            "Ensemble": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Bad"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            },
+            "TransNeXt": {
+                "judgment": "Bad"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            }
+        },
+        "Image_03": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            }
+        },
+        "Image_20": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            }
+        },
+        "Image_07": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Bad"
+            }
+        },
+        "Image_13": {
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Bad"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            }
+        },
+        "Image_12": {
+            "TransNeXt": {
+                "judgment": "Bad"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Bad"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            }
+        },
+        "Image_06": {
+            "Ensemble": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            }
+        },
+        "Image_15": {
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            }
+        },
+        "Image_02": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Bad"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Bad"
+            }
+        },
+        "Image_04": {
+            "TransNeXt": {
+                "judgment": "Good"
+            },
+            "SegFormer": {
+                "judgment": "Good"
+            },
+            "InternImage": {
+                "judgment": "Good"
+            },
+            "VWFormerConvNeXtS": {
+                "judgment": "Good"
+            },
+            "VWFormerMiTB3": {
+                "judgment": "Good"
+            },
+            "Ensemble": {
+                "judgment": "Good"
+            }
+        }
+    },
+    "best_model_feedback": {
+        "Image_19": {
+            "best_model": "SegFormer"
+        },
+        "Image_20": {
+            "best_model": "VWFormerConvNeXtS"
+        },
+        "Image_06": {
+            "best_model": "TransNeXt"
+        },
+        "Image_16": {
+            "best_model": "VWFormerConvNeXtS"
+        },
+        "Image_08": {
+            "best_model": "VWFormerConvNeXtS"
+        },
+        "Image_12": {
+            "best_model": "VWFormerMiTB3"
+        },
+        "Image_07": {
+            "best_model": "Ensemble"
+        },
+        "Image_11": {
+            "best_model": "Ensemble"
+        },
+        "Image_05": {
+            "best_model": "SegFormer"
+        },
+        "Image_13": {
+            "best_model": "SegFormer"
+        },
+        "Image_03": {
+            "best_model": "InternImage"
+        },
+        "Image_10": {
+            "best_model": "TransNeXt"
+        },
+        "Image_15": {
+            "best_model": "TransNeXt"
+        },
+        "Image_02": {
+            "best_model": "InternImage"
+        },
+        "Image_04": {
+            "best_model": "VWFormerConvNeXtS"
+        },
+        "Image_14": {
+            "best_model": "TransNeXt"
+        },
+        "Image_01": {
+            "best_model": "Ensemble"
+        },
+        "Image_18": {
+            "best_model": "VWFormerConvNeXtS"
+        },
+        "Image_09": {
+            "best_model": "InternImage"
+        },
+        "Image_17": {
+            "best_model": "VWFormerConvNeXtS"
+        }
+    }
+}

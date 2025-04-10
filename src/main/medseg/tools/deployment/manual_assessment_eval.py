@@ -3,10 +3,6 @@ import json
 import pandas as pd
 import numpy as np
 
-# Folder containing JSON files
-DATA_FOLDER = "physician_data"
-PREDICTIONS_FILE = "out/wound_analysis_results_largest.csv"
-
 
 def load_json_files(data_folder):
     """Load all physician JSON files into a list of dictionaries."""
@@ -51,7 +47,7 @@ def parse_wound_details_feedback(data):
     def _extract_dimensions(row):
         heights = []
         widths = []
-        for expert in ["Astrid", "Caro", "Tassilo"]:
+        for expert in ["physician1", "physician2", "physician3"]:
             h, w = map(int, row[expert].split(" x "))  # Convert to integers
             heights.append(h)
             widths.append(w)
@@ -116,9 +112,7 @@ def parse_best_model_feedback(data):
                 "image_id": img_id,
                 "best_model": details["best_model"]
             })
-    # Manually add best model selection of Caro (for the 2 images for which none of the six masks were considered good)
-    records.append({"image_id": "Bild_09", "best_model": "InternImage"})
-    records.append({"image_id": "Bild_17", "best_model": "VWFormerConvNeXtS"})
+
     return pd.DataFrame(records)
 
 
@@ -132,11 +126,11 @@ def calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, prediction
     cma_df.columns = ["model_name", "CMA"]
     cma_df["CMA"] *= 100  # Convert to percentage
 
-    # Images with at least one bad mask
-    bad_masks = mask_feedback_df[mask_feedback_df["judgment"] == "Bad"].sort_values("image_id")
-    # Difficult images: images with at least one bad mask
-    difficult_images = bad_masks["image_id"].unique()
-    images_without_bad_masks = set(mask_feedback_df["image_id"].unique()) - set(difficult_images)
+    # # Images with at least one bad mask
+    # bad_masks = mask_feedback_df[mask_feedback_df["judgment"] == "Bad"].sort_values("image_id")
+    # # Difficult images: images with at least one bad mask
+    # difficult_images = bad_masks["image_id"].unique()
+    # images_without_bad_masks = set(mask_feedback_df["image_id"].unique()) - set(difficult_images)
 
     # Expert Choice Rate (ECR)
     number_selections_per_model = best_model_df.groupby("best_model").size()
@@ -184,11 +178,21 @@ def calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, prediction
     filtered_df = merged_df[merged_df['image_id'].isin(image_ids_to_keep)]
     results_df = filtered_df.groupby("model_name").apply(compute_metrics)
 
+    # Add CMA and ECR to the results DataFrame
+    results_df = results_df.merge(cma_df, on="model_name", how="left")
+    results_df = results_df.merge(ecr_df, on="model_name", how="left")
+    results_df.set_index('model_name', inplace=True)
+
     ####### Prepare Latex Tables for Copying ###############
+
+    cols = ["CMA", "ECR"] + [col for col in results_df.columns if col not in ["CMA", "ECR"]]
+    results_df = results_df[cols]
 
     custom_order = ['TransNeXt', 'InternImage', 'VWFormerMiTB3', 'SegFormer', 'VWFormerConvNeXtS',  'Ensemble']
     results_df = results_df.reindex(custom_order)
 
+    results_df["CMA"] = results_df["CMA"].round(1)
+    results_df["ECR"] = results_df["ECR"].round(1)
     results_df["MAE_Height"] = results_df["MAE_Height"].round(1)
     results_df["MAE_Width"] = results_df["MAE_Width"].round(1)
     results_df["MAPE_Height"] = results_df["MAPE_Height"].round(1)
@@ -204,12 +208,13 @@ def calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, prediction
                                     " ± " + results_df["SD_Predicted_Width"].round(1).astype(str)
 
     # Keep only relevant columns and rename for LaTeX output
-    df_final = results_df[["Predicted Height", "MAE_Height", "MAPE_Height",
+    df_final = results_df[["CMA", "ECR",
+                           "Predicted Height", "MAE_Height", "MAPE_Height",
                            "Predicted Width", "MAE_Width", "MAPE_Width"]]
     df_final.index.name = "Model"  # Set index name for table header
 
     # Export to LaTeX
-    latex_output = df_final.to_latex(column_format="lcccccc", escape=False)
+    latex_output = df_final.to_latex(column_format="lcccccccc", escape=False)
 
     # Save to file
     with open(f"out/size_retrieval_results.tex", "w") as f:
@@ -222,53 +227,61 @@ def calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, prediction
     print("Processing finished")
 
 
-# Load and parse data
-os.makedirs("out/", exist_ok=True)
-data = load_json_files(DATA_FOLDER)
-wound_size_df = parse_wound_details_feedback(data)
-mask_feedback_df = parse_mask_feedback(data)
-best_model_df = parse_best_model_feedback(data)
+# Run script
+if __name__ == "__main__":
+    # Folder containing JSON files
+    DATA_FOLDER = "physician_data"
+    PREDICTIONS_FILE = "out/wound_analysis_results_largest.csv"
 
-# Load model predictions from CSV
-predictions_df = pd.read_csv(PREDICTIONS_FILE)
+    # Load and parse data
+    os.makedirs("out/", exist_ok=True)
+    data = load_json_files(DATA_FOLDER)
+    wound_size_df = parse_wound_details_feedback(data)
+    mask_feedback_df = parse_mask_feedback(data)
+    best_model_df = parse_best_model_feedback(data)
 
-# Ensure height is always the larger value
-predictions_df[['height_mm', 'width_mm']] = predictions_df.apply(
-    lambda row: (max(row['height_mm'], row['width_mm']),
-                 min(row['height_mm'], row['width_mm'])),
-    axis=1,
-    result_type='expand')
+    # Load model predictions from CSV
+    predictions_df = pd.read_csv(PREDICTIONS_FILE)
 
-# # Do some summarizing for the paper
-# predictions_df["Area_in_cm2"] = predictions_df["area_mm2"] / 100
-#
-# # Format all numerical columns to strings without decimal place except the area
-# predictions_df.loc[:, predictions_df.columns != 'Area_in_cm2'] = \
-#     predictions_df.loc[:, predictions_df.columns != 'Area_in_cm2'].applymap(lambda x: f"{round(x):.0f}"
-#     if isinstance(x, (int, float)) else x)
-#
-# # Apply rounding with one decimal place to the area
-# predictions_df['Area_in_cm2'] = predictions_df['Area_in_cm2'].apply(lambda x: f"{round(x, 1):.1f}")
-#
-# # Combine Mean and SD into a single column
-# predictions_df["Size"] = predictions_df["height_mm"].astype(str) + " x " \
-#                          + predictions_df["width_mm"].astype(str)
-#
-# # Keep only relevant columns and rename for LaTeX output
-# final_df = predictions_df[["image_id", "model_name", "Size", "Area_in_cm2"]]
-# final_df.index.name = "ID"  # Set index name for table header
-#
-# final_df["model_name"] = pd.Categorical(final_df["model_name"],
-#                                         ["VWFormerConvNeXtS", "InternImage", "VWFormerMiTB3",
-#                                          "SegFormer", "TransNeXt", "Ensemble"])
-# final_df.sort_values(by=['image_id', 'model_name'], inplace=True)
-#
-# # Export to LaTeX
-# latex_output = final_df.to_latex(column_format="lcc", escape=False)
-#
-# # Save to file
-# with open(f"out/predicted_sizes_and_area_for_paper.tex", "w") as f:
-#     f.write(latex_output)
+    # Ensure height is always the larger value
+    predictions_df[['height_mm', 'width_mm']] = predictions_df.apply(
+        lambda row: (max(row['height_mm'], row['width_mm']),
+                     min(row['height_mm'], row['width_mm'])),
+        axis=1,
+        result_type='expand')
 
-# Compute metrics
-calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, predictions_df)
+    # # Do some summarizing for the paper
+    # predictions_df["Area_in_cm2"] = predictions_df["area_mm2"] / 100
+    #
+    # # Format all numerical columns to strings without decimal place except the area
+    # predictions_df.loc[:, predictions_df.columns != 'Area_in_cm2'] = \
+    #     predictions_df.loc[:, predictions_df.columns != 'Area_in_cm2'].applymap(lambda x: f"{round(x):.0f}"
+    #     if isinstance(x, (int, float)) else x)
+    #
+    # # Apply rounding with one decimal place to the area
+    # predictions_df['Area_in_cm2'] = predictions_df['Area_in_cm2'].apply(lambda x: f"{round(x, 1):.1f}")
+    #
+    # # Combine Mean and SD into a single column
+    # predictions_df["Size"] = predictions_df["height_mm"].astype(str) + " x " \
+    #                          + predictions_df["width_mm"].astype(str)
+    #
+    # # Keep only relevant columns and rename for LaTeX output
+    # final_df = predictions_df[["image_id", "model_name", "Size", "Area_in_cm2"]]
+    # final_df.index.name = "ID"  # Set index name for table header
+    #
+    # final_df["model_name"] = pd.Categorical(final_df["model_name"],
+    #                                         ["VWFormerConvNeXtS", "InternImage", "VWFormerMiTB3",
+    #                                          "SegFormer", "TransNeXt", "Ensemble"])
+    # final_df.sort_values(by=['image_id', 'model_name'], inplace=True)
+    #
+    # # Export to LaTeX
+    # latex_output = final_df.to_latex(column_format="lcc", escape=False)
+    #
+    # # Save to file
+    # with open(f"out/predicted_sizes_and_area_for_paper.tex", "w") as f:
+    #     f.write(latex_output)
+
+    # Compute metrics
+    calculate_metrics(wound_size_df, mask_feedback_df, best_model_df, predictions_df)
+
+
