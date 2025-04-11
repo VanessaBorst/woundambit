@@ -68,10 +68,10 @@ Evaluations are automatically performed during and after training, however, sepa
 
 `python3 ./src/main/medseg/evaluation/eval.py from_kfold --path="./some_folder/example_checkpoint.pt --add_aux_test_set="ood"`
 
-## Size Retrieval and Further Tools
-A variety of tools can be found in `./src/main/medseg/tools`.
-In addition to the code for retrieving and evaluating wound sizes, there are tools for analyzing datasets, for benchmarking 
-different models and for creating XAI explanations, as well as for simple inference.
+U## Tools for Benchmarking, Size Retrieval, and Inference on Custom Images
+Different tools that use the trained model checkpoints can be found in `./src/main/medseg/tools`.
+In addition to the code for retrieving and evaluating wound sizes, there are tools for benchmarking 
+different models and for performing inference with the trained AI models on custom images.
 Please refer to the [dedicated tools documentation](docs/Tools.md) for more information.
 
 ## Final Notes

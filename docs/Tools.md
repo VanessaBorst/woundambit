@@ -1,4 +1,4 @@
-# WoundAmbit: Tool Overview
+# WoundAmbit: Tools Overview
 
 ## Benchmarking
 This tool can be used to evaluate key computational metrics of the different AI models, including:
@@ -32,18 +32,8 @@ This tool can be used to analyze pairs of 1) images containing our reference obj
 accurately determine wound dimensions. 
 For more details, see the [Size Retrieval Tool](SizeRetrieval_and_Eval.md) document.
 
-## XAI Explanations
+## Inference on Custom Images
 
-This tool can be used to generate XAI explanations for the different models.
-
-### Input
+This tool can be used to do inference with the trained AI models on a folder of custom images.
 By default, the script uses the 5-fold CV trained models from the `out/k_fold_models` directory, which can 
 be downloaded and unpacked from [Zenodo](https://zenodo.org/records/15123641?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjhiNTNlYTRhLTkyOWYtNDRhOC05OThlLTIxMGNiMzJkMTMzMiIsImRhdGEiOnt9LCJyYW5kb20iOiI3Njc1YjJiYzY5YTMzYmFmODRmYzhjYTViMTg0ZDI5MyJ9.Z0fZEKJUmA0QplsKMvaYOg6GhNGxOm_rfKT-H7GYDR4e6Arqd2d15FFuOunrqt79IPklYScBg26nUSqojpJA7A).
-Internally, the **ukw** and **cfu** datasets are used, since they are encoded in the underlying `k_fold_state`.
-
-### Output
-
-## Inference
-
-## Dataset Analysis
-
