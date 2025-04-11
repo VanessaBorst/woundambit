@@ -207,7 +207,7 @@ if __name__ == "__main__":
         results = {}
 
         intermediate_filename = f"intermediate_benchmark_results_{dataset}_{device_type}_{device_name}.pkl"
-        out_path = PathBuilder().root().out().add("benchmarking").add("extended_benchmarker").add("random").add(device_type) \
+        out_path = PathBuilder().root().out().add("benchmarking").add(device_type) \
             .add(intermediate_filename).build()
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
         # Save results to CSV
         csv_filename = f"benchmark_results_{dataset}_{device_type}_{device_name}.csv"
-        out_path = PathBuilder().root().out().add("benchmarking").add("extended_benchmarker").add("random").add(device_type) \
+        out_path = PathBuilder().root().out().add("benchmarking").add(device_type) \
             .add(csv_filename).build()
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         model_summarys = {name: values[0] for name, values in results.items()}
@@ -238,7 +238,7 @@ if __name__ == "__main__":
 
     # Compute mean across datasets, before save all results to pickle
     pickle_filename = f"all_benchmark_results_{device_type}_{device_name}.pkl"
-    out_path = PathBuilder().root().out().add("benchmarking").add("extended_benchmarker").add("random").add(device_type)\
+    out_path = PathBuilder().root().out().add("benchmarking").add(device_type)\
         .add(pickle_filename).build()
     with open(out_path, 'wb') as f:
         pickle.dump(all_results, f, pickle.HIGHEST_PROTOCOL)
@@ -295,7 +295,7 @@ if __name__ == "__main__":
 
     # Save mean results to CSV
     mean_csv_filename = f"benchmark_results_across_all_datasets_{device_type}_{device_name}.csv"
-    out_path = PathBuilder().root().out().add("benchmarking").add("extended_benchmarker").add("random").add(device_type)\
+    out_path = PathBuilder().root().out().add("benchmarking").add(device_type)\
         .add(mean_csv_filename).build()
     df_mean = pd.DataFrame.from_dict(mean_results, orient='index',
                                      columns=['MACs (G)', 'Parameters (M)', 'Inference Time (ms)',

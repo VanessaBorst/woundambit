@@ -2,7 +2,7 @@
 
 ## Size Retrieval
 
-This tool analyzes pairs of 1) images containing ArUco markers and 2) wound masks to accurately determine wound dimensions. It uses ArUco markers for calibration, computing a pixel-to-millimeter ratio to ensure precise measurements.
+This tool analyzes pairs of 1) images containing our reference object with ArUco markers and 2) wound masks to accurately determine wound dimensions. It uses ArUco markers for calibration, computing a pixel-to-millimeter ratio to ensure precise measurements.
 
 ### Key Idea
 

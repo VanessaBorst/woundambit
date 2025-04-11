@@ -13,7 +13,7 @@ from medseg.models.segmentors import SegformerB3, InternImageUperNet_T, TransNeX
     VWFormerConvNextS, FCBFormer, HarDNetDFUS, SegNeXtL, FUSegNet, UNet, MISSFormer, HiFormerB
 from medseg.util.path_builder import PathBuilder
 
-# IMPORTANT!!!! You should modify MODEL_MAPPING to store the class rather than an instance of the model.
+# IMPORTANT!!!! You should configure MODEL_MAPPING to store the class rather than an instance of the model.
 # This way, each time you call _load_model, a new instance of the model will be created,
 # and the state_dict can be loaded properly.
 MODEL_MAPPING = {
@@ -81,7 +81,7 @@ class ImageInferenceHelper:
             model_names (list[str]): List of model names for inference.
             model_ckpts_paths (dict): Mapping from model names to checkpoint paths.
             img_path (PathBuilder): Path to the dataset.
-            dataset_name (str): Name of the datase
+            dataset_name (str): Name of the dataset
             is_kfold (bool): Whether to use k-fold ensemble.
             save_contours (bool): Whether to overlay contours on output images.
             batch_size (int): Number of images processed at once.

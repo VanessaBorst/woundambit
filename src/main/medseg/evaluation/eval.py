@@ -124,5 +124,4 @@ def create_boxplot_from_kfold(paths: List[str], metric: str, save_dir: str, mode
 
 
 if __name__ == '__main__':
-    #os.environ["CUDA_VISIBLE_DEVICES"] = "MIG-e5cc7cc7-0a84-5237-9062-30b65511cb40"
     evaluate()

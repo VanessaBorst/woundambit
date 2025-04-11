@@ -46,7 +46,7 @@ include details on the model architectures, training parameters, and more.
 ## Training
 New training runs can be started with the following command:
 `python3 ./src/main/medseg/training/train.py from_config --path="./configs/some_config.yaml"`
-The training mode (single run, hyperparameter optimization, k-fold) is determined by the config.
+The training mode (hyperparameter optimization, k-fold) is determined by the config.
 
 For logging and checkpoints saving, the `./out` folder is used, with subfolders according to the training type.
 Within the subfolder corresponding to the training type, a new folder is created for each training run, according to the
