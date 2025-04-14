@@ -25,7 +25,7 @@ def train():
 @click.option("--simulate", type=bool, is_flag=True, default=False, required=False)
 def train_from_config(path: str, simulate: bool = False):
     print(f"Using config file under: {path}")
-    print(f"CUDA_VISIBLE_DEVICES: {os.environ['CUDA_VISIBLE_DEVICES']}")
+    # print(f"CUDA_VISIBLE_DEVICES: {os.environ['CUDA_VISIBLE_DEVICES']}")
     cfg = load_and_parse_config(path)
     cfg['trial_name'] = f"{cfg['architecture']['model_name']}_{get_current_date_time_str()}"
     check_config(cfg)

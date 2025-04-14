@@ -13,10 +13,16 @@ from medseg.models.segmentors import SegformerB3, InternImageUperNet_T, TransNeX
     VWFormerConvNextS, FCBFormer, HarDNetDFUS, SegNeXtL, FUSegNet, UNet, MISSFormer, HiFormerB
 from medseg.util.path_builder import PathBuilder
 
-# IMPORTANT!!!! You should configure MODEL_MAPPING to store the class rather than an instance of the model.
-# This way, each time you call _load_model, a new instance of the model will be created,
-# and the state_dict can be loaded properly.
+IMG_PATH = PathBuilder().root().add("data").add("datasets").add("size_retrieval")
+DATASET_NAME = "size_retrieval"
+SAVE_CONTOURS = True
+BATCH_SIZE = 1
+
+# Important: This script expects the 5-fold CV models to be saved at `out/k_fold_models`.
+# By default, separate inferences are run for each of the following models;
+# If you want to use only some models, just comment the unwanted rows to deactivate these models
 MODEL_MAPPING = {
+    # ModelName: (Class, FolderName, Constructor Arguments based on the respective paper configs)
     "TransNeXt": (TransNeXtUperNet_Tiny, "transnextupernet_tiny", {"in_size": 512}),
     "InternImage": (InternImageUperNet_T, "internimageupernet_t", {"in_size": 512}),
     "VWFormerMiTB3": (VWFormerMiTB3, "vwformermitb3", {"in_size": 512}),
@@ -30,6 +36,13 @@ MODEL_MAPPING = {
     "UNet": (UNet, "unet", {"in_size": 512, "use_pretrained": True}),
     "MISSFormer": (MISSFormer, "missformer", {"in_size": 512, "encoder_pretrained": True, "operate_on_224": True}),
     "HiFormer": (HiFormerB, "hiformerb", {"in_size": 512}),
+}
+
+# Use the TOP 5 models based on the majority vote for the UKW OOD dataset
+# Custom ensembles can be built by extending the following dictionary.
+ENSEMBLES = {
+    # EnsembleName : List of Models
+    "Ensemble_TOP_5": ["TransNeXt", "InternImage", "VWFormerMiTB3", "SegFormer", "VWFormerConvNeXtS"],
 }
 
 
@@ -75,7 +88,7 @@ class ImageInferenceHelper:
     def __init__(self, model_names: list[str], model_ckpts_paths: dict[str, PathBuilder], img_path: PathBuilder,
                  dataset_name:str, is_kfold: bool = True, save_contours: bool = True,
                  batch_size: int = 8, num_workers: int = 4,
-                 ensemble_name: str = None):
+                 ensemble_name: str = "ensemble"):
         """
         Args:
             model_names (list[str]): List of model names for inference.
@@ -278,54 +291,38 @@ class ImageInferenceHelper:
 
 
 if __name__ == "__main__":
-    # img_path = PathBuilder().root().add("data").add("datasets").add("ukw_with_marker").add("renamed_images")
-    # img_path = PathBuilder().root().add("data").add("datasets").add("dfuc_22_test")
-    img_path = PathBuilder().root().add("data").add("datasets").add("ukw_downscaled")
-    data_set_name = "ukw_ds"
-    save_contours = False
 
     # Single-model inference
     for model_name in MODEL_MAPPING.keys():
-        batch_size = 25 if model_name == "HarDNet-DFUS" else 50
-        print(f"Running inference for model: {model_name} with batch size {batch_size}")
+        print(f"Running inference for model: {model_name} with batch size {BATCH_SIZE}")
         inference = ImageInferenceHelper(
             model_names=[model_name],
             model_ckpts_paths={
                 model_name: PathBuilder().root().out().add("k_fold_models").add(MODEL_MAPPING[model_name][1])},
-            img_path=img_path,
-            dataset_name=data_set_name,
+            img_path=IMG_PATH,
+            dataset_name=DATASET_NAME,
             is_kfold=True,
-            save_contours=save_contours,
-            batch_size=batch_size,
+            save_contours=SAVE_CONTOURS,
+            batch_size=BATCH_SIZE,
             num_workers=4
         )
         inference.run_inference()
 
     # Repeat the inference for different sets of ensembles
-
-    # # Use the TOP 5 models based on the majority vote for the UKW OOD dataset
-    # ENSEMBLES = {
-    #     "Ensemble_TOP_5": ["TransNeXt", "InternImage", "VWFormerMiTB3", "SegFormer", "VWFormerConvNeXtS"],
-    #     "Ensemble_TOP_3": ["TransNeXt", "InternImage", "VWFormerMiTB3"],
-    #     "Ensemble_All": ["TransNeXt", "InternImage", "VWFormerMiTB3", "SegFormer", "VWFormerConvNeXtS",
-    #                      "FCBFormer", "HarDNet-DFUS", "SegNeXt", "FuSegNet", "UNet", "MISSFormer", "HiFormer"],
-    #     "Ensemble_TOP3_DFUC22": ["TransNeXt", "SegNeXt", "VWFormerConvNeXtS"]
-    # }
-    #
-    # for ensemble_name, model_names in ENSEMBLES.items():
-    #     batch_size = 20 if ensemble_name == "Ensemble_All" else 50
-    #     print(f"Running ensemble inference for {ensemble_name} with batch size {batch_size}"
-    #           f" and {len(model_names)} models.")
-    #     inference_ensemble = ImageInferenceHelper(
-    #         model_names=model_names,
-    #         model_ckpts_paths={name: PathBuilder().root().out().add("k_fold_models").add(MODEL_MAPPING[name][1]) for
-    #                            name in model_names},
-    #         img_path=img_path,
-    #         dataset_name=data_set_name,
-    #         is_kfold=True,
-    #         save_contours=save_contours,
-    #         batch_size=batch_size,
-    #         num_workers=4,
-    #         ensemble_name=ensemble_name
-    #     )
-    #     inference_ensemble.run_inference()
+    for ensemble_name, model_names in ENSEMBLES.items():
+        BATCH_SIZE = 20 if ensemble_name == "Ensemble_All" else 50
+        print(f"Running ensemble inference for {ensemble_name} with batch size {BATCH_SIZE}"
+              f" and {len(model_names)} models.")
+        inference_ensemble = ImageInferenceHelper(
+            model_names=model_names,
+            model_ckpts_paths={name: PathBuilder().root().out().add("k_fold_models").add(MODEL_MAPPING[name][1]) for
+                               name in model_names},
+            img_path=IMG_PATH,
+            dataset_name=DATASET_NAME,
+            is_kfold=True,
+            save_contours=SAVE_CONTOURS,
+            batch_size=BATCH_SIZE,
+            num_workers=4,
+            ensemble_name=ensemble_name
+        )
+        inference_ensemble.run_inference()

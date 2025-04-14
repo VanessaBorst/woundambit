@@ -97,7 +97,7 @@ class EnsembleEvaluator:
             self.logger.info(f"Evaluating Checkpoint {i + 1}/{len(self.checkpoint_paths)}...")
             # on the auxiliary test datasets, a majority vote eval can be additionally performed
             # on other models, the metrics from test datasets are averaged
-            print(os.environ['CUDA_VISIBLE_DEVICES'])
+            # print(os.environ['CUDA_VISIBLE_DEVICES'])
             checkpoint_dict = torch.load(path, map_location=torch.device("cuda"))
             checkpoint_dict['cfg'] = self.cfgs[i]
             evaluator = Evaluator.from_checkpoint(checkpoint_dict, path=path, split=self.eval_split_main, use_XAI=self.use_xai)

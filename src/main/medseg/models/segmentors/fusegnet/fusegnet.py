@@ -14,7 +14,7 @@ ENCODER = 'efficientnet-b7'  # encoder model
 ENCODER_WEIGHTS = 'imagenet'  # encoder weights
 
 
-ACTIVATION = 'sigmoid'  # output activation. sigmoid for binary and softmax for multi-class segmentation
+# ACTIVATION = 'sigmoid'  # output activation. sigmoid for binary and softmax for multi-class segmentation
 
 TO_CATEGORICAL = False  # if True, converts to onehot
 RAW_PREDICTION = False  # if true, then stores raw predictions (i.e. before applying threshold)

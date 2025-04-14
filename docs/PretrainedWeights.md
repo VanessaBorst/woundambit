@@ -14,6 +14,10 @@ downloaded manually. The following links can be used for this purpose:
 - [TransNeXt](https://huggingface.co/DaiShiResearch/transnext-tiny-224-1k/resolve/main/transnext_tiny_224_1k.pth?download=true): ImageNet-1K (according to GitHub)
 - [ConvNeXt-S backbone](https://download.openmmlab.com/mmclassification/v0/convnext/downstream/convnext-small_3rdparty_32xb128-noema_in1k_20220301-303e75e3.pth): ImageNet-1K[^3]
 
+**For simplicity, we already provide the above listed weights within this GitHub repository so that they do not need to 
+be downloaded one-by-one. If other model size variants than the ones used in our paper should be trainined,
+the weight files need to be downloaded by hand.**
+
 [^1]: Except for the head, the checkpoint is identical to the one provided as "pretrained on ImageNet-1K" in 
 the [official SegFormer repository](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/xieenze_connect_hku_hk/EvOn3l1WyM5JpnMQFSEO5b8B7vrHw9kDaJGII-3N9KNhrg?e=cpydzZ)
 (after conversion to the MMSegmentation style with the dedicated [script](https://github.com/open-mmlab/mmsegmentation/blob/b040e147adfa027bbc071b624bedf0ae84dfc922/tools/model_converters/mit2mmseg.py)).

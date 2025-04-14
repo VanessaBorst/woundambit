@@ -17,6 +17,7 @@ from medseg.util.path_builder import PathBuilder
 
 # Code adapted from https://github.com/amirhossein-kz/HiFormer
 
+# The following is the same for all three model size variants (L, B, S)
 SWIN_TINY_WEIGHTS_URL = "https://github.com/SwinTransformer/storage/releases/download/v1.0.0" \
                         "/swin_tiny_patch4_window7_224.pth"
 
