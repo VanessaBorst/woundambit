@@ -4,7 +4,7 @@
 
 This tool can be used to do inference with the trained AI models on a folder of custom images.
 By default, the script uses the 5-fold CV trained models from the `out/k_fold_models` directory, which can 
-be downloaded and unpacked from [Zenodo](https://zenodo.org/records/15123641?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjhiNTNlYTRhLTkyOWYtNDRhOC05OThlLTIxMGNiMzJkMTMzMiIsImRhdGEiOnt9LCJyYW5kb20iOiI3Njc1YjJiYzY5YTMzYmFmODRmYzhjYTViMTg0ZDI5MyJ9.Z0fZEKJUmA0QplsKMvaYOg6GhNGxOm_rfKT-H7GYDR4e6Arqd2d15FFuOunrqt79IPklYScBg26nUSqojpJA7A).
+be downloaded and unpacked from [Zenodo](https://zenodo.org/records/15123641).
 For each architecture, the script uses all 5 models from the 5-fold CV trained models for inference, applying pixel-wise majority vote. 
 
 ### Usage
