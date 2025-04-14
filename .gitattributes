@@ -1,0 +1,10 @@
+*.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/ filter=lfs diff=lfs merge=lfs -text
+data/pretrained/mit_b1.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/mit_b3.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/mscan_l.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/pvt_v2_b3.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/transnext_tiny_224_1k.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/convnext-small_in1k.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/internimage_t_1k_224.pth filter=lfs diff=lfs merge=lfs -text
+data/pretrained/kingnet53.pth filter=lfs diff=lfs merge=lfs -text
