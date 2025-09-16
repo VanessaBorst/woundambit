@@ -1,12 +1,26 @@
-MIT License
+MIT License (Code Only)
+Copyright (c) 2025 Vanessa Borst, Timo Dittus, and Contributors
 
-Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors
---please also consider the Third-Party Code and Licenses section below--
+***************************************************************************
 
-This software is based on an earlier codebase developed by Timo Dittus as part of a Master's thesis project at
-the University of Würzburg in 2023, under the supervision of Vanessa Borst at the Chair of Computer Science II,
-led by Prof. Dr. Samuel Kounev. Substantial modifications, extensions, and new functionalities were later added
-by Vanessa Borst.
+Note on Scope:
+The MIT License below applies exclusively to the original source code developed by the authors.
+Trained AI models, patient images, and other data are explicitly excluded from this license.
+Usage of these assets is governed by separate restrictions as described in DATA_LICENSE.md.
+
+This software builds upon an earlier codebase developed by Timo Dittus as part of a Master's thesis at the University of
+Würzburg in 2023, supervised by Vanessa Borst at the Chair of Computer Science II, led by Prof. Dr. Samuel Kounev.
+Substantial modifications, extensions, and new functionalities were subsequently added by Vanessa Borst.
+
+***************************************************************************
+
+Note on Third-Party Code and Licenses:
+
+This project includes third-party components under various licenses (e.g., Apache 2.0, MIT, NVIDIA Source Code License).
+These components are not covered under the MIT License and are included only according to their original license terms.
+Please consult the license headers in individual source files and the original repositories for detailed information.
+
+**************************************************************************
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,13 +39,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
---------------------------------------------------------------------------
-
-Third-Party Code and Licenses
-
-This project includes third-party components under various licenses (e.g., Apache 2.0, MIT, NVIDIA Source Code License).
-These third-party components are not covered under the MIT License and are included only in accordance with the terms of their original licenses.
-Please refer to the LICENSE files provided with each third-party component for detailed licensing terms.
-
 

@@ -101,6 +101,8 @@ Additional files such as supplementary analysis, archived code snapshot, and tra
 - 🧠 [Trained Models](https://zenodo.org/records/15123641)
 - 🗂️ [Archived Code Snapshot]()
 
+---
+
 ## ⚖️ License
 
 
@@ -111,17 +113,6 @@ However, portions of the codebase incorporate or adapt components from other ope
 
 Please make sure to consult the respective licenses if you intend to reuse or redistribute portions of the included 
 third-party code. For details, see the [Third-Party License Attribution](#third-party) section below.
-
----
-
-## ❗ Data and Model Usage
-
-The patient images and trained AI models included in this repository are provided **for research and educational purposes only**.  
-Users must **cite the original paper** when using these resources.  
-Any redistribution, commercial use, or publication of these data requires compliance with applicable ethical and legal regulations.
-
-For further details, please refer to `DATA_LICENSE.md` in the repository.
-
 
 ## <a name="third-party"></a> 📄 Third-Party Code Attribution
 
@@ -150,13 +141,22 @@ information provided in the header of the respective source files located in `sr
 
 
 
-❗❗❗Please refer to the license headers within individual source files as well as the licenses in the original code 
-repositories for more detailed licensing information❗❗❗
+❗Please refer to the license headers within individual source files and the original repositories for more detailed 
+licensing information❗
 
-## ❗Image and Checkpoint Usage - Attribution Required
- 
-If you use any of the visual content (e.g., wound images) or the trained AI models, **please cite our work** 
-as described above.
+
+## ❗ Data, Image and Model Usage ❗ 
+
+The patient images and trained AI models included in this repository are provided 
+**for research and educational purposes only**.
+
+- **Attribution Required**: Users must cite the original paper when using these resources.  
+- **Redistribution & Commercial Use**: Not permitted without explicit permission from the authors.
+- **Ethical Compliance**: Using patient data requires compliance with all applicable privacy,ethical and legal regulations.
+
+For full details, see the `DATA_LICENSE.md` file included in the repository.
+
+---
 
 
 ## 👥 Acknowledgements and Origin
