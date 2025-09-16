@@ -154,7 +154,7 @@ The patient images and trained AI models included in this repository are provide
 - **Redistribution & Commercial Use**: Not permitted without explicit permission from the authors.
 - **Ethical Compliance**: Using patient data requires compliance with all applicable privacy,ethical and legal regulations.
 
-For full details, see the `DATA_LICENSE.md` file included in the repository.
+For full details, see the [DATA_LICENSE.md](DATA_LICENSE.md).
 
 ---
 
@@ -169,7 +169,7 @@ Afterwards, the framework has been substantially modified and extended by Vaness
 Extensions include the addition of  new segmentation models, integration of the out-of-distribution (OOD) dataset, 
 development of tools for benchmarking and inference, and the design of the wound size retrieval system.
 
-See [CONTRIBUTORS.md](CONTRIBUTORS.md) for a full list of contributors and their respective roles.
+See [Contributors.md](Contributors.md.md) for a full list of contributors and their respective roles.
 
 ## 📬 Contact
 In case you have any questions or want to collaborate, feel free to contact me at:
