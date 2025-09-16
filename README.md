@@ -3,9 +3,10 @@
 This repository contains the official implementation of the paper:
 
 **"WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care"**,  
-which was accepted at the Applied Data Science Track and won the Best Student Paper Award of this track at **ECML PKDD 2025**.
+which was accepted for presentation in the Applied Data Science Track at **ECML PKDD 2025**, 
+where it received the Best Student Paper Award.
 
-If you find this repository helpful for your work, please cite our contribution as follows:
+If you find this repository useful for your research or work, please cite our contribution as follows:
 
 ```bibtex
 @inproceedings{borst2025woundambit,
@@ -110,6 +111,16 @@ However, portions of the codebase incorporate or adapt components from other ope
 
 Please make sure to consult the respective licenses if you intend to reuse or redistribute portions of the included 
 third-party code. For details, see the [Third-Party License Attribution](#third-party) section below.
+
+---
+
+## ❗ Data and Model Usage
+
+The patient images and trained AI models included in this repository are provided **for research and educational purposes only**.  
+Users must **cite the original paper** when using these resources.  
+Any redistribution, commercial use, or publication of these data requires compliance with applicable ethical and legal regulations.
+
+For further details, please refer to `DATA_LICENSE.md` in the repository.
 
 
 ## <a name="third-party"></a> 📄 Third-Party Code Attribution
