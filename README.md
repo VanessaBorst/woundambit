@@ -169,7 +169,7 @@ Afterwards, the framework has been substantially modified and extended by Vaness
 Extensions include the addition of  new segmentation models, integration of the out-of-distribution (OOD) dataset, 
 development of tools for benchmarking and inference, and the design of the wound size retrieval system.
 
-See [Contributors.md](Contributors.md.md) for a full list of contributors and their respective roles.
+See [Contributors.md](Contributors.md) for a full list of contributors and their respective roles.
 
 ## 📬 Contact
 In case you have any questions or want to collaborate, feel free to contact me at:
