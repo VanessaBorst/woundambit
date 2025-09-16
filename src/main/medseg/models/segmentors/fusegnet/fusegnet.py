@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/mrinal054/FUSegNet
+#
+# Original license from the FuSegNet repository:
+# The MIT License
+# Copyright (c) 2019, Pavel Iakubovskii (and Mrinal Kanti Dhar?)
+# --------------------------------------------------------
+
 import torch
 
 from medseg.evaluation.params import create_model_summary

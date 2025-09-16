@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/yan-hao-tian/VW
+#
+# Original license from the VWFormer repository:
+# The MIT License
+# Copyright (c) 2024 yan-hao-tian
+# --------------------------------------------------------
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

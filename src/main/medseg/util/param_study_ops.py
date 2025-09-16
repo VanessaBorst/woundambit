@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 def encode_trial_name_short(trial_params, separator="_"):
     """
     Encode all values from the trial_params dict into a string for a trial name.

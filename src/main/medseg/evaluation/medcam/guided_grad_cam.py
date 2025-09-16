@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Original license from the M3d-Cam repository:
+# MIT License
+# Copyright (c) 2020 Karol Gotkowski
+# --------------------------------------------------------
+# Code (in small parts) adapted by Vanessa Borst, Timo Dittus, and Contributors
+# --------------------------------------------------------
+
+
 import numpy as np
 from medseg.evaluation.medcam.grad_cam import GradCAM
 from medseg.evaluation.medcam.guided_backpropagation import GuidedBackPropagation

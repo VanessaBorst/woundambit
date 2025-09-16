@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 import builtins
 import inspect
 from typing import Any, Dict, Set

@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from  https://github.com/NVlabs/SegFormer
+#
+# Original license from the SegFormer repository:
+# NVIDIA Source Code License
+# Copyright (c) 2021, NVIDIA Corporation. All rights reserved.
+# --------------------------------------------------------
+
 from functools import partial
 
 import torch

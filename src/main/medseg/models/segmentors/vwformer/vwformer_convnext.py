@@ -1,11 +1,21 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/yan-hao-tian/VW
+#
+# Original license from the VWFormer repository:
+# The MIT License
+# Copyright (c) 2024 yan-hao-tian
+# --------------------------------------------------------
+
 import torch
 from torch.nn import functional as F
 
 from medseg.evaluation.params import create_model_summary
 from medseg.models.backbones.convnext import ConvNeXt
-# Code adapted from https://github.com/yan-hao-tian/VW
 from medseg.models.decode_heads.vw_head import VWHead
 from medseg.models.segmentors.segmentor import Segmentor
+
+# Code adapted from https://github.com/yan-hao-tian/VW
 
 
 class VWFormerConvNext(Segmentor):

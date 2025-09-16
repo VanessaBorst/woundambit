@@ -2,7 +2,7 @@ import torch
 from torch import nn
 
 from torch.nn import functional as F
-# CaraNet loss, adapted with modifications from https://github.com/AngeLouCN/CaraNet
+# CaraNet loss, adapted with modifications from https://github.com/AngeLouCN/CaraNet (no license specified)
 # very similar to HarDNet loss, seemingly they both copied vast amounts of code from the PraNet publication
 class CaraNetLoss(nn.Module):
     def __init__(self):

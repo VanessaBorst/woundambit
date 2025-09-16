@@ -1,10 +1,11 @@
 # --------------------------------------------------------
-# InternImage
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/OpenGVLab/InternImage
+#
+# Original license from the InternImage repository:
+# MIT License
 # Copyright (c) 2022 OpenGVLab
-# Licensed under The MIT License [see LICENSE for details]
 # --------------------------------------------------------
-
-# Code adapted from https://github.com/OpenGVLab/InternImage
 
 import torch
 import torch.nn as nn

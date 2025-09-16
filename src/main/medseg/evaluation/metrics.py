@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 from enum import Enum
 from typing import Dict
 

@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
+
 import inspect
 from typing import Union
 

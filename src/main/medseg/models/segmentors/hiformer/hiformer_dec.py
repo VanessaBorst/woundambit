@@ -1,7 +1,14 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/amirhossein-kz/HiFormer
+#
+# Original license from the Hiformer repository:
+# MIT License
+# Copyright (c) 2022 Amirhossein Kazerouni
+# --------------------------------------------------------
+
 import torch.nn as nn
 
-
-# Code adapted from https://github.com/amirhossein-kz/HiFormer
 
 class ConvUpsample(nn.Module):
     def __init__(self, in_chans=384, out_chans=[128], upsample=True):

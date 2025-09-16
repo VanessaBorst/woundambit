@@ -1,4 +1,14 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/open-mmlab/mmsegmentation/blob/main/mmseg/models/decode_heads/uper_head.py
+# and https://github.com/open-mmlab/mmsegmentation/blob/main/mmseg/models/decode_heads/psp_head.py
+#
+# Original license from the repositories:
+# Apache License 2.0
 # Copyright (c) OpenMMLab. All rights reserved.
+# --------------------------------------------------------
+
+
 import torch
 import torch.nn as nn
 

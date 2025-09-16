@@ -1,4 +1,13 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/open-mmlab/mmpretrain/blob/main/mmpretrain/models/backbones/convnext.py
+#
+# Original license from the ConvNeXt repository:
+# Apache License 2.0
 # Copyright (c) OpenMMLab. All rights reserved.
+# --------------------------------------------------------
+
+
 from functools import partial
 from itertools import chain
 from typing import Sequence

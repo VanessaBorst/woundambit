@@ -6,6 +6,9 @@ from medseg.util.helper_functions import integer_float_to_int
 
 # The following function is copied from
 # https://github.com/open-mmlab/mmsegmentation/blob/main/tools/model_converters/mit2mmseg.py
+# Copyright 2020 The MMSegmentation Authors. All rights reserved.
+#                                  Apache License
+
 # Aim: Convert SegFormer GitHub model weights to MMSegmentation style.
 def convert_own_to_mmseg_mit(ckpt):
     new_ckpt = OrderedDict()

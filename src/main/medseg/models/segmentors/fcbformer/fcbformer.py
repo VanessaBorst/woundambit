@@ -1,3 +1,13 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/ESandML/FCBFormer/
+#
+# Original license from the FCBFormer repository:
+# Apache License 2.0
+# Authors: Edward Sanderson and Bogdan J. Matuszewski
+# --------------------------------------------------------
+
+
 from functools import partial
 from typing import Callable
 

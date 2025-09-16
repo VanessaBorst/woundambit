@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# Code (possibly) adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/ZhifangDeng/MISSFormer/
+#
+# Original license from the MISSFormer repository: Not specified
+# --------------------------------------------------------
+
 import torch
 from torch import nn
 

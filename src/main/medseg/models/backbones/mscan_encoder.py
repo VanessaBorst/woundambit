@@ -1,3 +1,13 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from  https://github.com/Visual-Attention-Network/SegNeXt
+#
+# Original license from the SegNeXt repository:
+# Apache License 2.0
+# Copyright 2022 SegNeXt Authors
+# --------------------------------------------------------
+
+
 import math
 from typing import Optional
 

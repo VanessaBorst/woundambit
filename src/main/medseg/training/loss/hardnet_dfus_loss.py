@@ -1,3 +1,11 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/YuWenLo/HarDNet-DFUS
+#
+# Original license from the HarDNet-DFUS repository: Not specified
+# --------------------------------------------------------
+
+
 import torch
 from torch import nn
 from torch.nn import functional as F

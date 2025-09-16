@@ -1,3 +1,12 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/amirhossein-kz/HiFormer
+#
+# Original license from the Hiformer repository:
+# MIT License
+# Copyright (c) 2022 Amirhossein Kazerouni
+# --------------------------------------------------------
+
 from typing import List
 
 import torch
@@ -12,7 +21,6 @@ from medseg.models.segmentors.hiformer.components import BasicLayer, PatchMergin
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Code adapted from https://github.com/amirhossein-kz/HiFormer
 
 class Attention(nn.Module):
     def __init__(self, dim, factor, heads=8, dim_head=64, dropout=0.):

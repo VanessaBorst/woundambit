@@ -1,3 +1,13 @@
+# --------------------------------------------------------
+# Code possibly adapted by Vanessa Borst, Timo Dittus and Contributors
+# from  https://github.com/whai362/PVT
+#
+# Original license from the PVT repository:
+# Apache License 2.0
+# Copyright 2020 - present, Facebook, Inc
+# --------------------------------------------------------
+
+
 import math
 
 import torch

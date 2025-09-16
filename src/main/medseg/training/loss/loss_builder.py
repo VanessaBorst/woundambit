@@ -4,7 +4,7 @@ from torch import nn
 
 from medseg.training.loss.caranet_loss import CaraNetLoss
 from medseg.training.loss.combinations import BCEDice  # , BDiceFocal, BCEFocal, BCEFocalDice
-from medseg.training.loss.focal_loss import BinaryFocalTverskyLogitsLoss
+# from medseg.training.loss.focal_loss import BinaryFocalTverskyLogitsLoss
 from medseg.training.loss.hardnet_dfus_loss import HarDNetDFUSLoss
 from medseg.training.loss.soft_dice_loss import SoftDiceLoss
 from medseg.util.class_ops import get_class_arg_names
@@ -12,9 +12,9 @@ from medseg.util.class_ops import get_class_arg_names
 LOSS_MAPPINGS = {
     "crossentropy": nn.CrossEntropyLoss,
     "softdice": SoftDiceLoss,
-    "binaryfocaltverskylogits": BinaryFocalTverskyLogitsLoss,
-    "bfocallogits": BinaryFocalTverskyLogitsLoss,
-    "bftl": BinaryFocalTverskyLogitsLoss,
+    # "binaryfocaltverskylogits": BinaryFocalTverskyLogitsLoss,
+    # "bfocallogits": BinaryFocalTverskyLogitsLoss,
+    # "bftl": BinaryFocalTverskyLogitsLoss,
     "bce": nn.BCELoss,
     "binarycrossentropy": nn.BCELoss,
     "bcewithlogits": nn.BCEWithLogitsLoss,

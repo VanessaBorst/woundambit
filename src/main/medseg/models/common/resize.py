@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# Copyright (c) OpenMMLab. All rights reserved.
+# --------------------------------------------------------
+# Code minimally adapted by Vanessa Borst, Timo Dittus, and Contributors
+# --------------------------------------------------------
+
+
 import torch
 from torch.nn import functional as F
 

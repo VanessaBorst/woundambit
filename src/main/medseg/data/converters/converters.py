@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
 import os
 from collections import OrderedDict
 from typing import List, Tuple, Optional, Set, Dict

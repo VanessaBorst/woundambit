@@ -1,8 +1,12 @@
-# ---------------------------------------------------------------
-# Copyright (c) 2021, NVIDIA Corporation. All rights reserved.
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from  https://github.com/NVlabs/SegFormer
 #
-# This work is licensed under the NVIDIA Source Code License
-# ---------------------------------------------------------------
+# Original license from the SegFormer repository:
+# NVIDIA Source Code License
+# Copyright (c) 2021, NVIDIA Corporation. All rights reserved.
+# --------------------------------------------------------
+
 import torch
 import torch.nn as nn
 from mmcv.cnn import ConvModule

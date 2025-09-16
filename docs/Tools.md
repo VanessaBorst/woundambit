@@ -62,9 +62,3 @@ AI-predicted wound masks to accurately determine wound dimensions.
 For more details, see the [Size Retrieval Tool](SizeRetrieval_and_Eval.md) document.
 
 
-# TODOs
-- Rework Inference ReadMe
-- Describe download and placement of k fold models at central place
-- Restructure all readme files
-- Start a new project on the GPU server with the code and check if everything works
-- OPtionally: Add other tools (e.g. XAI) later

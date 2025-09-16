@@ -1,3 +1,10 @@
+# The code is copied from segmentation_models_pytorch to modify the location, where the UnetDecoder is called from
+# Since the authors integrated custom attention types that are not part of the official repo, we copied there modified
+# version into fusegnet_decoder.py
+# Please refer to the LICENSE information of segmentation_models_pytorch:
+# The MIT License,  Copyright (c) 2019, Pavel Iakubovskii
+
+
 from typing import Optional, Union, List
 
 from segmentation_models_pytorch.encoders import get_encoder
@@ -9,9 +16,6 @@ from segmentation_models_pytorch.base import (
 
 from medseg.models.segmentors.fusegnet.fusegnet_decoder import UnetDecoder
 
-# The code is copied from segmentation_models_pytorch to modify the location, where the UnetDecoder is called from
-# Since the authors integrated custom attention types that are not part of the official repo, we copied there modified
-# version into fusegnet_decoder.py
 
 
 class Unet(SegmentationModel):

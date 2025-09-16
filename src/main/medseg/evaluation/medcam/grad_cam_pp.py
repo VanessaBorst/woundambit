@@ -1,3 +1,11 @@
+# --------------------------------------------------------
+# Original license from the M3d-Cam repository:
+# MIT License
+# Copyright (c) 2020 Karol Gotkowski
+# --------------------------------------------------------
+# Code (in small parts) adapted by Vanessa Borst, Timo Dittus, and Contributors
+# --------------------------------------------------------
+
 import torch
 from torch.nn import functional as F
 from medseg.evaluation.medcam.grad_cam import GradCAM

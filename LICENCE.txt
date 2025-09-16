@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors
+--please also consider the Third-Party Code and Licenses section below--
+
+This software is based on an earlier codebase developed by Timo Dittus as part of a Master's thesis project at
+the University of Würzburg in 2023, under the supervision of Vanessa Borst at the Chair of Computer Science II,
+led by Prof. Dr. Samuel Kounev. Substantial modifications, extensions, and new functionalities were later added
+by Vanessa Borst.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+
+Third-Party Code and Licenses
+
+This project includes third-party components under various licenses (e.g., Apache 2.0, MIT, NVIDIA Source Code License).
+These third-party components are not covered under the MIT License and are included only in accordance with the terms of their original licenses.
+Please refer to the LICENSE files provided with each third-party component for detailed licensing terms.
+
+

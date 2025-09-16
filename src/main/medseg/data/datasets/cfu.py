@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
+
 from typing import List, Optional
 
 from medseg.data.datasets.medseg_dataset import MedsegDataset

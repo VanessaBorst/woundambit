@@ -3,7 +3,7 @@
 This repository contains the official implementation of the paper:
 
 **"WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care"**,  
-accepted to the Applied Data Science Track at **ECML PKDD 2025**.
+which was accepted at the Applied Data Science Track and won the Best Student Paper Award of this track at **ECML PKDD 2025**.
 
 If you find this repository helpful for your work, please cite our contribution as follows:
 
@@ -100,4 +100,67 @@ Additional files such as supplementary analysis, archived code snapshot, and tra
 - 🧠 [Trained Models](https://zenodo.org/records/15123641)
 - 🗂️ [Archived Code Snapshot]()
 
-All files are provided under an appropriate open-source or research license.
+## ⚖️ License
+
+
+This repository is licensed under the [MIT License](LICENSE) for all original code provided by the authors.
+
+However, portions of the codebase incorporate or adapt components from other open-source projects with differing licenses 
+(e.g., Apache 2.0, NVIDIA Source Code License). These third-party modules retain their original licenses.
+
+Please make sure to consult the respective licenses if you intend to reuse or redistribute portions of the included 
+third-party code. For details, see the [Third-Party License Attribution](#third-party) section below.
+
+
+## <a name="third-party"></a> 📄 Third-Party Code Attribution
+
+This project includes third-party components under various licenses (e.g., Apache 2.0, MIT, NVIDIA Source Code License).
+
+The list below contains only a selection of the major models.
+For each implementation, external code is explicitly attributed to the original authors, with corresponding license 
+information provided in the header of the respective source files located in `src/main/medseg/models/`.
+
+| Model/Component   |              Authors/Copyright              |                    License |
+|:------------------|:-------------------------------------------:|---------------------------:|
+| ConvNeXt          |        OpenMMLab/MMPreTrain Authors         |                 Apache 2.0 |
+| FCBFormer         | Edward Sanderson and Bogdan J. Matuszewski  |                 Apache 2.0 |
+| FUSegNet          | Pavel Iakubovskii and Mrinal Kanti Dhar (?) |                        MIT |
+| HarDNet-DFUS      |                      ?                      |              Not specified |
+| HiFormer          |            Amirhossein Kazerouni            |                        MIT |
+| InternImage       |                  OpenGVLab                  |                        MIT |
+| M3d-Cam (GradCAM) |               Karol Gotkowski               |                        MIT |
+| MISSformer        |                      ?                      |              Not specified |
+| PVT               |                Facebook, Inc                |                 Apache 2.0 |
+| SegFormer         |             NVIDIA Corporation              | NVIDIA Source Code License |
+| SegNeXt           |               SegNeXt Authors               |                 Apache 2.0 |
+| TransNeXt         |                   Dai Shi                   |                 Apache 2.0 |
+| UPerNet           |        OpenMMLab/MMPreTrain Authors         |                 Apache 2.0 |
+| VWFormer          |                 Haotian Yan                 |                        MIT |
+
+
+
+❗❗❗Please refer to the license headers within individual source files as well as the licenses in the original code 
+repositories for more detailed licensing information❗❗❗
+
+## ❗Image and Checkpoint Usage - Attribution Required
+ 
+If you use any of the visual content (e.g., wound images) or the trained AI models, **please cite our work** 
+as described above.
+
+
+## 👥 Acknowledgements and Origin
+
+This repository builds upon a [codebase developed by Timo Dittus](https://github.com/tim0dd/medseg) during his 
+Master's thesis project at the University of Würzburg in 2023, under the supervision of Vanessa Borst at the 
+Chair of Computer Science II, led by Prof. Dr. Samuel Kounev. 
+
+Afterwards, the framework has been substantially modified and extended by Vanessa Borst. 
+Extensions include the addition of  new segmentation models, integration of the out-of-distribution (OOD) dataset, 
+development of tools for benchmarking and inference, and the design of the wound size retrieval system.
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for a full list of contributors and their respective roles.
+
+## 📬 Contact
+In case you have any questions or want to collaborate, feel free to contact me at:
+- Mail: vanessa.borst@uni-wuerzburg.de
+- LinkedIn: [Vanessa Borst](www.linkedin.com/in/vanessa-borst-72027a21a)

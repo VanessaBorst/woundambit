@@ -1,3 +1,13 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/DaiShiResearch/TransNeXt/
+#
+# Original license from the TransNeXt repository:
+# Apache License 2.0
+# Copyright 2023 - present, Dai Shi
+# --------------------------------------------------------
+
+
 import torch
 import torch.nn as nn
 import pkg_resources

@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 def nested_get(dictionary, keys, default=None):
     """
     Perform a nested lookup in a dictionary with a list of keys.

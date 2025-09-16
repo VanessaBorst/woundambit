@@ -5,6 +5,9 @@ from torch import nn
 class SoftDiceLoss(nn.Module):
     """
     SoftDiceLoss used in FCBFormer, from: https://github.com/ESandML/FCBFormer
+    License:                    Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
     """
 
     def __init__(self, smooth=1):

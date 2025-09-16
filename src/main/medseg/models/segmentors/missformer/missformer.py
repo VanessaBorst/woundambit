@@ -1,3 +1,11 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/ZhifangDeng/MISSFormer/
+#
+# Original license from the MISSFormer repository: Not specified
+# --------------------------------------------------------
+
+
 import torch
 import torch.nn as nn
 from einops import rearrange

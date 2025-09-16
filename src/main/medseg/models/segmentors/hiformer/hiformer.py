@@ -1,3 +1,13 @@
+# --------------------------------------------------------
+# Code adapted by Vanessa Borst, Timo Dittus and Contributors
+# from https://github.com/amirhossein-kz/HiFormer
+#
+# Original license from the Hiformer repository:
+# MIT License
+# Copyright (c) 2022 Amirhossein Kazerouni
+# --------------------------------------------------------
+
+
 import os
 from typing import List, Callable
 
@@ -15,7 +25,6 @@ from medseg.models.segmentors.segmentor import Segmentor
 from medseg.training.loss.hiformer_dice_loss import HiFormerDiceLoss
 from medseg.util.path_builder import PathBuilder
 
-# Code adapted from https://github.com/amirhossein-kz/HiFormer
 
 # The following is the same for all three model size variants (L, B, S)
 SWIN_TINY_WEIGHTS_URL = "https://github.com/SwinTransformer/storage/releases/download/v1.0.0" \

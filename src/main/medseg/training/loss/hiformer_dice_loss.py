@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# Original license from the Hiformer repository:
+# MIT License
+# Copyright (c) 2022 Amirhossein Kazerouni
+# --------------------------------------------------------
+
+
 import torch
 from torch import nn
 

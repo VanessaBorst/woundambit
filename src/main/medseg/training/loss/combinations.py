@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# WoundAmbit
+# Copyright (c) 2025 Vanessa Borst, Timo Dittus and Contributors.
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
+
 from torch import nn, Tensor
 
 from medseg.training.loss.soft_dice_loss import SoftDiceLoss
