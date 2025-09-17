@@ -1,10 +1,8 @@
 # WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care
 
 This repository contains the official implementation of the paper:
-
 **"WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care"**,  
-which was accepted for presentation in the Applied Data Science Track at **ECML PKDD 2025**, 
-where it received the Best Student Paper Award.
+which was accepted for presentation in the Applied Data Science Track at **ECML PKDD 2025**.
 
 If you find this repository useful for your research or work, please cite our contribution as follows:
 
