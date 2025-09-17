@@ -12,8 +12,7 @@ This repository builds upon a collaborative effort by several contributors whose
 
 ### Timo Dittus  
 - Developed the original codebase as part of his Master's thesis project at the University of Würzburg (2023).  
-- Focused on the initial design of the segmentation pipeline and model training workflows.  
-- Supervised by Vanessa Borst during the thesis.
+- Focused on the initial design of the segmentation pipeline and model training workflows.
 
 ## Medical and Dataset Contributions
 
@@ -22,8 +21,10 @@ This repository builds upon a collaborative effort by several contributors whose
 - Supported the design of the clinical use cases.
 
 ### Tassilo Dege  
-- Contributed to the collection and structuring of the out-of-distribution (OOD) wound image dataset.  
+- Coordinated and supervised the medical aspects of the project
+- Collected, structured, and annotated the out-of-distribution (OOD) wound image dataset.  
 - Supported integration of clinical context and validation requirements.
+
 
 ### Luisa Deutzmann  
 - Contributed to the collection and organization of wound photographs used for the wound size retrieval evaluation.  
