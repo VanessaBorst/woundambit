@@ -8,8 +8,7 @@ The MIT License below applies exclusively to the original source code developed 
 Trained AI models, patient images, and other data are explicitly excluded from this license.
 Usage of these assets is governed by separate restrictions as described in DATA_LICENSE.md.
 
-This software builds upon an earlier codebase developed by Timo Dittus as part of a Master's thesis at the University of
-Würzburg in 2023, supervised by Vanessa Borst at the Chair of Computer Science II, led by Prof. Dr. Samuel Kounev.
+This software builds upon an earlier codebase developed by Timo Dittus as part of a Master's thesis at the University of Würzburg in 2023, supervised by Vanessa Borst at the Chair of Computer Science II, led by Prof. Dr. Samuel Kounev.
 Substantial modifications, extensions, and new functionalities were subsequently added by Vanessa Borst.
 
 ***************************************************************************
