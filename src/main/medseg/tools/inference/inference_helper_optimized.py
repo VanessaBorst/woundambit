@@ -68,7 +68,7 @@ class ImageDataset(Dataset):
 
         # Check if the image has square dimensions and if not, pad it to make it square
         original_size = image.size
-        padding = None
+        padding = (0, 0, 0, 0)
         if image.width != image.height:
             # Pad the image to make it square by adding zeros to the smaller side
             image, padding = self._pad_to_square(image)
